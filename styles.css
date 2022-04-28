@@ -52,6 +52,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-top: 40px;
+    
 }
 
 .weed-img{
@@ -62,6 +64,7 @@
 
 
 .weed-bg{
+    position: relative;
     --bg-size: 350px;
     height: var(--bg-size);
     width: var(--bg-size);
@@ -69,6 +72,33 @@
     background: radial-gradient(rgb(4, 230, 238),rgb(178, 241, 2), rgb(218, 9, 9));
     z-index: 1;
 }
+
+.click-animation > *{
+    --top-value:20%;
+    --left-value: 50%;
+    position: absolute;
+    top: var(--top-value);
+    left: var(--left-value);
+    transform: translate(-50%, -50%);
+    z-index: 2334;
+    color: rgb(2, 104, 10);
+    font-size: 22px;
+}
+
+.clickAnimation{
+    animation: clickanimation .5s ease;
+}
+
+@keyframes clickanimation{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
 
 .right-container{
     height: 100vh;
@@ -90,6 +120,11 @@
     border: 1px solid black;
     cursor: pointer;
     transition:  .3s ;
+
+}
+
+.clickAnimation{
+
 }
 
 .card:hover{
